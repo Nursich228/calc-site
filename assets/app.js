@@ -52,6 +52,68 @@
     }
   }
 
+  /* --- отзывы и предложения: карточка «Помогите сделать сайт лучше» и окно с формой --- */
+  (function feedback() {
+    const FB = { ru: { empty: 'Поставьте оценку или напишите пару слов', err: 'Не удалось отправить. Откроем почтовую программу', subj: 'Есепте: отзыв' },
+                 kk: { empty: 'Баға қойыңыз немесе бірнеше сөз жазыңыз', err: 'Жіберу мүмкін болмады. Пошта бағдарламасын ашамыз', subj: 'Есепте: пікір' } }[L];
+    const MAIL = 'dester1310@gmail.com', ENDPOINT = 'https://formsubmit.co/ajax/' + MAIL;
+    const dlg = doc.getElementById('fb-dialog');
+    doc.querySelectorAll('[data-open-feedback]').forEach(b => b.addEventListener('click', e => {
+      e.preventDefault();
+      if (!dlg) return;
+      const kind = b.getAttribute('data-kind');
+      if (kind) { const r = dlg.querySelector(`input[name="kind"][value="${kind}"]`); if (r) r.checked = true; }
+      if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    }));
+    doc.querySelectorAll('.fb-close').forEach(b => b.addEventListener('click', () => { const d = b.closest('dialog'); if (d.close) d.close(); else d.removeAttribute('open'); }));
+    if (dlg) dlg.addEventListener('click', e => { if (e.target === dlg && dlg.close) dlg.close(); });
+    doc.querySelectorAll('form.fb-form').forEach(form => {
+      const stars = form.querySelectorAll('.stars button');
+      stars.forEach((s, i) => s.addEventListener('click', () => { form.rating.value = i + 1; stars.forEach((x, j) => { x.classList.toggle('on', j <= i); x.setAttribute('aria-pressed', j === i ? 'true' : 'false'); }); }));
+      const text = form.message, count = form.querySelector('.fb-count');
+      if (text && count) text.addEventListener('input', () => { count.textContent = text.value.length + ' / 2000'; });
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (data._honey) return;
+        if (!data.message && !data.rating) { alertBox(form, FB.empty); return; }
+        data.page = location.pathname; data.lang = L;
+        data._subject = FB.subj + (data.kind ? ' — ' + data.kind : '');
+        data._template = 'table'; data._captcha = 'false';
+        const btn = form.querySelector('button[type=submit]'); btn.disabled = true;
+        try {
+          const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
+          if (!r.ok) throw new Error(r.status);
+          form.hidden = true; form.parentElement.querySelector('.fb-thanks').hidden = false;
+        } catch (err) {
+          alertBox(form, FB.err);
+          setTimeout(() => { location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent(data._subject) + '&body=' + encodeURIComponent((data.rating ? '★' + data.rating + '\n' : '') + (data.message || '') + '\n\n' + location.href); }, 900);
+        } finally { btn.disabled = false; }
+      });
+    });
+    function alertBox(form, msg) { let a = form.querySelector('.fb-alert'); if (!a) { a = doc.createElement('p'); a.className = 'fb-alert'; a.setAttribute('role', 'alert'); form.appendChild(a); } a.textContent = msg; }
+    /* карточка с оценкой «нравится / не нравится» — общий счетчик Abacus, без cookie */
+    const card = doc.getElementById('fb-card');
+    if (!card) return;
+    if (store.get('fbc-hidden', false)) { card.hidden = true; return; }
+    const x = card.querySelector('.fbc-x');
+    if (x) x.addEventListener('click', () => { store.set('fbc-hidden', true); card.hidden = true; });
+    const API = 'https://abacus.jasoncameron.dev/', NS = 'calc-practicetap-com', KEY = { like: 'site-like', dislike: 'site-dislike' };
+    let my = store.get('fbc-vote', '');
+    const put = (v, n) => { const el = card.querySelector(`[data-c="${v}"]`); if (el) el.textContent = n; };
+    const render = () => {
+      card.querySelectorAll('.fbc-v').forEach(b => { const on = b.dataset.v === my; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      const m = card.querySelector('.fbc-msg'); if (m) m.hidden = !my;
+    };
+    ['like', 'dislike'].forEach(v => fetch(API + 'get/' + NS + '/' + KEY[v]).then(r => r.status === 404 ? { value: 0 } : r.json()).then(d => put(v, d.value != null ? d.value : 0)).catch(() => put(v, '–')));
+    card.querySelectorAll('.fbc-v').forEach(b => b.addEventListener('click', () => {
+      if (my) return;
+      my = b.dataset.v; store.set('fbc-vote', my); render();
+      fetch(API + 'hit/' + NS + '/' + KEY[my]).then(r => r.json()).then(d => put(my, d.value)).catch(() => {});
+    }));
+    render();
+  })();
+
   /* --- страница калькулятора --- */
   const formEl = doc.getElementById('calc-form');
   if (!formEl || !window.ESEPTE || !window.RATES) return;
