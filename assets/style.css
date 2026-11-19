@@ -187,6 +187,19 @@ details.adv .fields { margin-top: 12px; }
 .disclaimer { background: var(--warn-soft); color: var(--ink); border-left: 4px solid var(--warn); border-radius: 10px; padding: 13px 16px; font-size: .9rem; margin: 24px 0; max-width: 780px; }
 .related .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 
+/* Страницы готовых расчетов */
+.landing-res { max-width: 760px; }
+.landing-res .actions .btn { text-decoration: none; }
+.scroll-x { overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .95rem; font-variant-numeric: tabular-nums; }
+.data-table th { text-align: right; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.data-table td { text-align: right; padding: 10px; border-bottom: 1px solid var(--soft); white-space: nowrap; }
+.data-table th:first-child, .data-table td:first-child { text-align: left; }
+.data-table td:first-child a { font-weight: 600; }
+.data-table tbody tr:hover { background: var(--bg); }
+.chip[aria-current] { border-color: var(--accent); background: var(--accent-soft); }
+.btn-primary, a.btn { text-decoration: none; }
+
 /* Юридические страницы */
 .prose { max-width: 780px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; margin: 10px 0 30px; }
 .prose h2 { font-size: 1.1rem; margin-top: 1.4em; }
