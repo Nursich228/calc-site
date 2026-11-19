@@ -200,6 +200,14 @@ details.adv .fields { margin-top: 12px; }
 .chip[aria-current] { border-color: var(--accent); background: var(--accent-soft); }
 .btn-primary, a.btn { text-decoration: none; }
 
+/* Уведомление о cookie */
+.cookie-note { position: fixed; left: 16px; bottom: 16px; z-index: 60; max-width: 420px; display: flex; gap: 12px; align-items: center; background: var(--paper); color: var(--ink); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; box-shadow: 0 10px 30px rgba(0,0,0,.15); font-size: .875rem; }
+.cookie-note p { margin: 0; }
+.cookie-note .btn { flex: none; }
+.cookie-note[hidden] { display: none; }
+@media (max-width: 600px) { .cookie-note { left: 8px; right: 8px; bottom: 84px; max-width: none; } }
+@media print { .cookie-note { display: none !important; } }
+
 /* Статьи */
 .art { max-width: 760px; }
 .art h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0; }

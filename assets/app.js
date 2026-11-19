@@ -52,6 +52,14 @@
     }
   }
 
+  /* --- уведомление о cookie (Яндекс Метрика), показывается один раз --- */
+  (function () {
+    const n = doc.getElementById('cookie-note'); if (!n) return;
+    if (store.get('cookie-ok', false)) return;
+    n.hidden = false;
+    doc.getElementById('cookie-ok').addEventListener('click', () => { store.set('cookie-ok', true); n.hidden = true; });
+  })();
+
   /* --- отзывы и предложения: карточка «Помогите сделать сайт лучше» и окно с формой --- */
   (function feedback() {
     const FB = { ru: { empty: 'Поставьте оценку или напишите пару слов', err: 'Не удалось отправить. Откроем почтовую программу', subj: 'Есепте: отзыв' },
