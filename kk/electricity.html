@@ -48,6 +48,7 @@
 <div class="h1row"><i class="ico ico-lg"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-zap"/></svg></i><h1>Электр энергиясына төлем калькуляторы</h1></div>
 <p class="lead">Жарыққа төлемді есептегіш көрсеткіштері мен түбіртектегі тариф бойынша, оның ішінде тұтыну сатылары бойынша есептеңіз.</p>
 <div class="meta"><span>Деректер жаңартылды: <b>2026 жылғы қараша</b></span></div>
+<div class="chips tariff-presets"><span class="chips-label">Алматы тарифі:</span><a class="chip" href="electricity.html?t1=34.28&tiers=1&l1=90&t2=45.51&l2=160&t3=56.89">1 адам</a><a class="chip" href="electricity.html?t1=34.28&tiers=1&l1=180&t2=45.51&l2=320&t3=56.89">2 адам</a><a class="chip" href="electricity.html?t1=34.28&tiers=1&l1=270&t2=45.51&l2=480&t3=56.89">3 адам</a><a class="chip" href="electricity.html?t1=34.28&tiers=1&l1=360&t2=45.51&l2=640&t3=56.89">4 адам</a></div><p class="hint">Алматының 2026 жылғы 12 қыркүйектен бастап ҚҚС-пен тарифтері қойылады: кВт·сағ үшін 34,28 / 45,51 / 56,89 ₸. Саты шектері — тіркелген әр адамға 90 және 160 кВт·сағ; оларды түбіртекпен салыстырыңыз. Басқа қалалар үшін тарифті түбіртегіңізден енгізіңіз.</p>
 </div>
 <section class="calc">
 <div class="panel"><h2 class="skip">Бастапқы деректер</h2><form id="calc-form" data-calc="electricity" onsubmit="return false" novalidate><noscript><p>Калькулятор жұмыс істеуі үшін браузерде JavaScript-ті қосыңыз.</p></noscript></form></div>
@@ -62,7 +63,7 @@
 </section>
 <a class="mini" id="calc-mini" href="#result-panel" hidden><span></span><b></b></a>
 <article class="article">
-<h2>Қалай есептеледі</h2><p>Есептегіш көрсеткіштері мен тарифті енгізіңіз. Тариф тұтыну көлеміне байланысты болса, сатыларды қосып, олардың шектерін көрсетіңіз.</p>
+<h2>Алматыдағы тарифтер</h2><div class="scroll-x"><table class="data-table"><thead><tr><th>Саты</th><th>Бір адамға тұтыну</th><th>ҚҚС-пен тариф</th></tr></thead><tbody><tr><td>1-саты</td><td>90 кВт·сағ дейін</td><td>34,28 ₸</td></tr><tr><td>2-саты</td><td>90–160 кВт·сағ</td><td>45,51 ₸</td></tr><tr><td>3-саты</td><td>160 кВт·сағ жоғары</td><td>56,89 ₸</td></tr></tbody></table></div><p class="hint">2026 жылғы 12 қыркүйектен бастап қолданылады. Дереккөз: <a href="https://esalmaty.kz/ru/home-tariffs/1level" rel="noopener" target="_blank">ЭнергоСбыт АО «АЖК»</a>. Тарифтер өзгеруі мүмкін — нақты бағаны түбіртектен қараңыз.</p><h2>Қалай есептеледі</h2><p>Есептегіш көрсеткіштері мен тарифті енгізіңіз. Тариф тұтыну көлеміне байланысты болса, сатыларды қосып, олардың шектерін көрсетіңіз.</p>
 <h2>Жиі қойылатын сұрақтар</h2><details><summary>Тарифті қайдан алуға болады?</summary><p>Түбіртектен немесе қалаңыздағы энергиямен жабдықтаушы ұйымның сайтынан.</p></details><details><summary>Калькуляторда неге дайын тарифтер жоқ?</summary><p>Тарифтер қалалар бойынша әртүрлі және өзгеріп отырады. Есеп дәл болуы үшін өз тарифіңізді енгізіңіз.</p></details>
 
 
@@ -97,6 +98,6 @@
 <p class="hint">Хабарлама FormSubmit сервисі арқылы сайт әкімшісінің поштасына келеді. ЖСН, карта нөмірлері және басқа жеке деректерді көрсетпеңіз.</p>
 <button class="btn btn-primary" type="submit">Жіберу</button></form>
 <div class="fb-thanks" hidden><h3>Рахмет, хабарлама жіберілді</h3><p>Біз оны оқимыз және e-mail қалдырсаңыз, жауап береміз.</p></div></dialog>
-<script src="../assets/rates.js" defer></script><script src="../assets/calcs.js" defer></script><script src="../assets/app.js" defer></script>
+<script src="../assets/rates.js" defer></script><script src="../assets/c/electricity.js" defer></script><script src="../assets/app.js" defer></script>
 </body>
 </html>

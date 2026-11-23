@@ -48,6 +48,7 @@
 <div class="h1row"><i class="ico ico-lg"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-droplets"/></svg></i><h1>Калькулятор оплаты за воду</h1></div>
 <p class="lead">Оплата за холодную и горячую воду и водоотведение по вашим объёмам и тарифам.</p>
 <div class="meta"><span>Данные обновлены: <b>ноябрь 2026</b></span></div>
+<div class="chips tariff-presets"><span class="chips-label">Тариф города:</span><a class="chip" href="water.html?tc=178.06&ts=119.46&hot=0&th=0">Алматы</a><a class="chip" href="water.html?tc=119.36&ts=127.41&hot=0&th=0">Астана</a><a class="chip" href="water.html?tc=111.44&ts=62.41&hot=0&th=0">Шымкент</a></div><p class="hint">Подставятся тарифы на холодную воду и водоотведение с НДС. Горячую воду введите по своей квитанции.</p>
 </div>
 <section class="calc">
 <div class="panel"><h2 class="skip">Исходные данные</h2><form id="calc-form" data-calc="water" onsubmit="return false" novalidate><noscript><p>Для работы калькулятора включите JavaScript в браузере.</p></noscript></form></div>
@@ -62,7 +63,7 @@
 </section>
 <a class="mini" id="calc-mini" href="#result-panel" hidden><span></span><b></b></a>
 <article class="article">
-<h2>Как считается</h2><p>Введите объёмы воды по счётчикам и тарифы из квитанции. Водоотведение обычно начисляется на весь объём воды.</p>
+<h2>Тарифы на воду в городах</h2><div class="scroll-x"><table class="data-table"><thead><tr><th>Город</th><th>Холодная вода, ₸/м³</th><th>Водоотведение, ₸/м³</th><th>Действует с</th></tr></thead><tbody><tr><td>Алматы</td><td>178,06</td><td>119,46</td><td>1 октября 2026</td></tr><tr><td>Астана</td><td>119,36</td><td>127,41</td><td>1 апреля 2026</td></tr><tr><td>Шымкент</td><td>111,44</td><td>62,41</td><td>10 октября 2026</td></tr></tbody></table></div><p class="hint">Тарифы для населения с НДС. Источник: <a href="https://finratings.kz/news/17224-gde-v-kazakhstane-voda-obkhoditsia-dorozhe-vsego-sravnili-tarify-v-9-gorodakh/" rel="noopener" target="_blank">finratings.kz</a>. Перед оплатой сверьте с квитанцией.</p><h2>Как считается</h2><p>Введите объёмы воды по счётчикам и тарифы из квитанции. Водоотведение обычно начисляется на весь объём воды.</p>
 <h2>Частые вопросы</h2><details><summary>Как посчитать объём воды?</summary><p>Текущие показания счётчика минус предыдущие — это объём в кубометрах за месяц.</p></details><details><summary>Что делать, если нет счётчика?</summary><p>Начисление идёт по нормам потребления на человека. Норму и тариф смотрите в квитанции.</p></details>
 
 
@@ -97,6 +98,6 @@
 <p class="hint">Сообщение придет администратору сайта на почту через сервис FormSubmit. Не указывайте ИИН, номера карт и другие личные данные.</p>
 <button class="btn btn-primary" type="submit">Отправить</button></form>
 <div class="fb-thanks" hidden><h3>Спасибо, сообщение отправлено</h3><p>Мы прочитаем его и ответим, если вы оставили e-mail.</p></div></dialog>
-<script src="assets/rates.js" defer></script><script src="assets/calcs.js" defer></script><script src="assets/app.js" defer></script>
+<script src="assets/rates.js" defer></script><script src="assets/c/water.js" defer></script><script src="assets/app.js" defer></script>
 </body>
 </html>

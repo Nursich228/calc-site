@@ -48,6 +48,7 @@
 <div class="h1row"><i class="ico ico-lg"><svg class="ic" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-droplets"/></svg></i><h1>Суға төлем калькуляторы</h1></div>
 <p class="lead">Сіздің көлемдеріңіз бен тарифтеріңіз бойынша суық және ыстық суға, су бұруға төлем.</p>
 <div class="meta"><span>Деректер жаңартылды: <b>2026 жылғы қараша</b></span></div>
+<div class="chips tariff-presets"><span class="chips-label">Қала тарифі:</span><a class="chip" href="water.html?tc=178.06&ts=119.46&hot=0&th=0">Алматы</a><a class="chip" href="water.html?tc=119.36&ts=127.41&hot=0&th=0">Астана</a><a class="chip" href="water.html?tc=111.44&ts=62.41&hot=0&th=0">Шымкент</a></div><p class="hint">Суық су мен су бұрудың ҚҚС-пен тарифтері қойылады. Ыстық суды түбіртегіңіз бойынша енгізіңіз.</p>
 </div>
 <section class="calc">
 <div class="panel"><h2 class="skip">Бастапқы деректер</h2><form id="calc-form" data-calc="water" onsubmit="return false" novalidate><noscript><p>Калькулятор жұмыс істеуі үшін браузерде JavaScript-ті қосыңыз.</p></noscript></form></div>
@@ -62,7 +63,7 @@
 </section>
 <a class="mini" id="calc-mini" href="#result-panel" hidden><span></span><b></b></a>
 <article class="article">
-<h2>Қалай есептеледі</h2><p>Есептегіштер бойынша су көлемдерін және түбіртектегі тарифтерді енгізіңіз. Су бұру әдетте судың бүкіл көлеміне есептеледі.</p>
+<h2>Қалалардағы су тарифтері</h2><div class="scroll-x"><table class="data-table"><thead><tr><th>Қала</th><th>Суық су, ₸/м³</th><th>Су бұру, ₸/м³</th><th>Қолданылу басы</th></tr></thead><tbody><tr><td>Алматы</td><td>178,06</td><td>119,46</td><td>2026 жылғы 1 қазан</td></tr><tr><td>Астана</td><td>119,36</td><td>127,41</td><td>2026 жылғы 1 сәуір</td></tr><tr><td>Шымкент</td><td>111,44</td><td>62,41</td><td>2026 жылғы 10 қазан</td></tr></tbody></table></div><p class="hint">Халыққа арналған ҚҚС-пен тарифтер. Дереккөз: <a href="https://finratings.kz/news/17224-gde-v-kazakhstane-voda-obkhoditsia-dorozhe-vsego-sravnili-tarify-v-9-gorodakh/" rel="noopener" target="_blank">finratings.kz</a>. Төлер алдында түбіртекпен салыстырыңыз.</p><h2>Қалай есептеледі</h2><p>Есептегіштер бойынша су көлемдерін және түбіртектегі тарифтерді енгізіңіз. Су бұру әдетте судың бүкіл көлеміне есептеледі.</p>
 <h2>Жиі қойылатын сұрақтар</h2><details><summary>Су көлемін қалай есептеуге болады?</summary><p>Есептегіштің ағымдағы көрсеткіштері минус алдыңғылары — бұл айдағы текше метрмен көлем.</p></details><details><summary>Есептегіш болмаса не істеу керек?</summary><p>Есептеу адам басына тұтыну нормалары бойынша жүргізіледі. Норма мен тарифті түбіртектен қараңыз.</p></details>
 
 
@@ -97,6 +98,6 @@
 <p class="hint">Хабарлама FormSubmit сервисі арқылы сайт әкімшісінің поштасына келеді. ЖСН, карта нөмірлері және басқа жеке деректерді көрсетпеңіз.</p>
 <button class="btn btn-primary" type="submit">Жіберу</button></form>
 <div class="fb-thanks" hidden><h3>Рахмет, хабарлама жіберілді</h3><p>Біз оны оқимыз және e-mail қалдырсаңыз, жауап береміз.</p></div></dialog>
-<script src="../assets/rates.js" defer></script><script src="../assets/calcs.js" defer></script><script src="../assets/app.js" defer></script>
+<script src="../assets/rates.js" defer></script><script src="../assets/c/water.js" defer></script><script src="../assets/app.js" defer></script>
 </body>
 </html>

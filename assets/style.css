@@ -341,3 +341,5 @@ body, .cat, .card { --c-soft: color-mix(in srgb, var(--c) 12%, var(--paper)); }
 .res-value { display: inline-block; background: linear-gradient(transparent 70%, color-mix(in srgb, var(--amber) 42%, transparent) 70%); padding: 0 2px; }
 .hero h1 { background: linear-gradient(90deg, var(--ink) 55%, var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 @media print { .hero h1 { color: #000; background: none; } .card::before { display: none; } }
+.calc-head .tariff-presets { margin: 6px 0 4px; }
+.calc-head .tariff-presets + .hint { max-width: 760px; }
